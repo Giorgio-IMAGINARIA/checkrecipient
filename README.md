@@ -63,13 +63,13 @@ As well as the use of template literals:
 
 let timeToReturn: string = `${year}-${month}-${date}T${hour}:${minute}:${secondsValueToConvert}Z`;
 
-The following statement uses the Object.keys(obj) method to loop through the JSON object passed and to append the parameters to the URL to be used by fetch for the GET request:
+The following statement uses the Object.keys(obj) method to return an array of keys from the JSON object passed and then the forEach() method to loop through that. The append method of url.searchParams appends those keys and their values to the URL created with the address retrieved from the related store that is then used by Fetch for the GET request:
 
 let url = new URL(address),
   params = objectToSubmit;
 Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
-As for React, the way the elements are dinamically rendered on the screen requires the use of states:
+As for React, the way the elements are dynamically rendered on the screen requires the use of states:
 
 this.state = {
   issueList: []
@@ -87,4 +87,4 @@ and then rendered:
 
 # FUTURE IMPROVEMENTS
 
-The logic can be much more DRY, also the different filters can be split in different components, that would require the use of different action-creators and stores, but would make the whole app more reusable. also some components would be very similar and they could be composed so that changes to the parent class would reverberate towards the children. 
+The logic can be much more DRY, also the different filters can be split in different components, that would require the use of different action-creators and stores, but would make the whole app more reusable. also some components would be very similar and they could be composed so that changes to the parent class would reverberate towards the children.
